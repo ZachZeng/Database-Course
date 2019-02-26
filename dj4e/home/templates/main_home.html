@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}This is Zach{% endblock %}
+{% block content %}
+<h1>My DJ4E Projects</h1>
+<p>
+{% if user.is_authenticated %}
+<ul>
+    <li><a href="/autos">Autos CRUD</a>
+</ul>
+<p><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></p>   
+{% else %}
+<p><a href="{% url 'login'%}?next={{request.path}}">Please log in</a></p>   
+{% endif %}
+</p>
+<h2>Hello World</h2>
+{% endblock %}
